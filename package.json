@@ -1,0 +1,40 @@
+{
+  "name": "cardmaker",
+  "version": "1.0.0",
+  "description": "Image generator credit & gift card",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ilyapasyuk@github.com/ilyapasyuk/card.git"
+  },
+  "keywords": [
+    "card",
+    "generator",
+    "visa",
+    "mastercard"
+  ],
+  "author": "Ilya Pasyuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilyapasyuk/card/issues"
+  },
+  "homepage": "https://github.com/ilyapasyuk/card#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angularjs": "0.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-connect": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-watch": "^4.3.10",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.3.2",
+    "jquery2": "^2.0.3-a"
+  }
+}

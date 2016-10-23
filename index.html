@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Card maker 1.0</title>
+  <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/angular.min.js"></script>
+  <script src="./js/html2canvas.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="./js/ui.js"></script>
+</head>
+<body ng-view>
+	<div class="container">
+		<div class="col-sm-4">
+			<div class="item"><input type="text" ng-model="cardNumber" placeholder="1234 5678 9012 3456"></div>
+			<div class="item"><input type="text"></div>
+			<div class="item"><input type="text"></div>
+		</div>
+		<div class="col-sm-4">
+			<div id="card" class="card">
+				<div class="number">
+          {{cardNumber}}    
+        </div>
+			</div>
+      <button id="btnSave">Save</button>
+      <div id="img-out"></div>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+</body>
+</html>
