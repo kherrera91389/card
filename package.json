@@ -31,10 +31,10 @@
     "gulp-connect": "^5.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-watch": "^4.3.10",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "gulp-sass": "~2.3.2"
   },
   "devDependencies": {
-    "gulp-sass": "^2.3.2",
     "jquery2": "^2.0.3-a"
   }
 }

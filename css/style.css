@@ -1,13 +1,1 @@
-.col-sm-4 {
-  width: 33.3%;
-  float: left; }
-
-.card {
-  width: 570px;
-  height: 360px;
-  box-shadow: -15px 78px 75px 0px rgba(0, 0, 0, 0.5), -2px 3px 6px 0px rgba(0, 0, 0, 0.8), -9px 36px 54px 0px rgba(0, 0, 0, 0.6);
-  border-radius: 21px; }
-  .card .number {
-    font-size: 42px;
-    color: white;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8); }
+.col-sm-4{width:33.3%;float:left}.card{width:350px;max-width:100%;height:200px;border-radius:21px;box-shadow:0 0 20px rgba(0,0,0,0.3);transition:all 400ms linear;background:#DDD}.card .number{font-size:42px;color:white;text-shadow:0px 2px 3px rgba(0,0,0,0.8)}
