@@ -1,31 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="UTF-8">
 	<title>Card maker 1.0</title>
-  <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/angular.min.js"></script>
-  <script src="./js/html2canvas.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="./js/ui.js"></script>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/angular.min.js"></script>
+	<script src="./js/html2canvas.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
-<body ng-view>
-	<div class="container">
+<body>
+	<div class="container" ng-controller="Controller">
 		<div class="col-sm-4">
-			<div class="item"><input type="text" ng-model="cardNumber" placeholder="1234 5678 9012 3456"></div>
-			<div class="item"><input type="text"></div>
-			<div class="item"><input type="text"></div>
-		</div>
-		<div class="col-sm-4">
-			<div id="card" class="card">
-				<div class="number">
-          {{cardNumber}}    
+			<div class="item">
+        <div class="row">
+          <div class="col-sm-6">
+            <input type="text" ng-model="cardNumber" placeholder="Card Number">
+          </div>
+          <div class="col-sm-6">
+            <input type="text" ng-model="cardHolder" placeholder="Card Holder">
+          </div>
         </div>
-			</div>
-      <button id="btnSave">Save</button>
-      <div id="img-out"></div>
-		</div>
-		<div class="col-sm-4"></div>
-	</div>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="button">
+            <input type="checkbox" ng-model="visa" ng-init="checked=true">
+              <img src="./images/visa.svg" alt="">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="button" ng-model="mastercard">
+            <input type="checkbox" ng-model="mastercard" ng-init="checked=true">
+              <img src="./images/mastercard.png" alt="">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <input type="file" value="load" class="button" onchange="angular.element(this).scope().cardLogo(this)" />
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-sm-12">
+            <input type="file" value="load" class="button" onchange="angular.element(this).scope().fileLoaded(this)" />
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-sm-12">
+            <button id="btnSave" class="button">Save</button>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div id="img-out"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+
+     <div id="card" data-offset="5" class="card">
+      <div class="light"></div>
+      <div data-offset="-2" class="layer-1">
+        <img ng-src="{{loadedFile}}" />
+      </div>
+      <div class="layer-2 card__number">
+        {{cardNumber}}
+      </div>
+      <div data-offset="1" class="layer-3 card__holder">{{cardHolder}}</div>
+      <div data-offset="3" class="layer-4 card__logo">
+        <img src="./images/visa.svg" alt="" ng-if="visa">
+        <img src="./images/mastercard.png" alt="" ng-if="mastercard">
+        <img ng-src="{{loadedLogo}}"/>
+      </div>
+      <!-- <div data-offset="10" class="layer-5">12312341243</div> -->
+    </div>
+  </div>
+  <div class="col-sm-4">
+
+  </div>
+</div>
+<script src="./js/ui.js"></script>
 </body>
 </html>
