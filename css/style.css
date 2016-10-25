@@ -122,7 +122,7 @@ input:focus,
     right: 10%;
     top: 30px; }
     .card .card__logo img {
-      max-height: 40px;
+      max-height: 30px;
       display: block; }
   .card .card__number,
   .card .card__holder {
