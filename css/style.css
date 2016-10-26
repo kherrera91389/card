@@ -11,72 +11,83 @@ body {
   min-height: 100%; }
 
 body {
+  font-family: Arial;
   position: relative;
+  transform: perspective(800px);
   background: -webkit-linear-gradient(top, #f6f7fc 0%, #d5e1e8 40%);
   background: linear-gradient(to bottom, #f6f7fc 0%, #d5e1e8 40%);
-  transform-style: preserve-3d;
-  font-family: Arial;
-  -webkit-box-shadow: none;
   box-shadow: none;
-  transform: perspective(800px); }
+  transform-style: preserve-3d; }
 
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
 textarea,
 .button {
-  -webkit-appearance: none;
-  background-color: white;
   font-family: inherit;
-  border: 1px solid #ccc;
-  color: rgba(0, 0, 0, 0.75);
+  font-size: .875rem;
   display: block;
-  font-size: 0.875rem;
-  padding: 0.5rem;
-  height: 2.3125rem;
-  border-right: none;
   width: 100%;
-  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
-  [class^="col-"]:last-child input[type="text"], [class^="col-"]:last-child
-  input[type="password"], [class^="col-"]:last-child
-  input[type="date"], [class^="col-"]:last-child
-  input[type="datetime"], [class^="col-"]:last-child
-  input[type="datetime-local"], [class^="col-"]:last-child
-  input[type="month"], [class^="col-"]:last-child
-  input[type="week"], [class^="col-"]:last-child
-  input[type="email"], [class^="col-"]:last-child
-  input[type="number"], [class^="col-"]:last-child
-  input[type="search"], [class^="col-"]:last-child
-  input[type="tel"], [class^="col-"]:last-child
-  input[type="time"], [class^="col-"]:last-child
-  input[type="url"], [class^="col-"]:last-child
-  textarea, [class^="col-"]:last-child
+  height: 2.3125rem;
+  padding: .5rem;
+  transition: box-shadow .45s, border-color .45s ease-in-out;
+  color: rgba(0, 0, 0, 0.75);
+  border: 1px solid #ccc;
+  border-right: none;
+  background-color: white;
+  -webkit-appearance: none; }
+  [class^='col-']:last-child input[type='text'], [class^='col-']:last-child
+  input[type='password'], [class^='col-']:last-child
+  input[type='date'], [class^='col-']:last-child
+  input[type='datetime'], [class^='col-']:last-child
+  input[type='datetime-local'], [class^='col-']:last-child
+  input[type='month'], [class^='col-']:last-child
+  input[type='week'], [class^='col-']:last-child
+  input[type='email'], [class^='col-']:last-child
+  input[type='number'], [class^='col-']:last-child
+  input[type='search'], [class^='col-']:last-child
+  input[type='tel'], [class^='col-']:last-child
+  input[type='time'], [class^='col-']:last-child
+  input[type='url'], [class^='col-']:last-child
+  textarea, [class^='col-']:last-child
   .button {
     border-right: 1px solid #ccc; }
 
 .button {
   cursor: pointer;
   text-align: center; }
+  .button.success {
+    color: white;
+    border-color: #57cc82;
+    background-color: #5ed88b; }
+    .button.success:hover {
+      border-color: #4aad6f;
+      background-color: #4aad6f; }
   .button img {
     max-width: 100%;
     max-height: 100%; }
 
+label {
+  cursor: pointer; }
+  label.button input[type=checkbox], label.button input[type=file] {
+    display: none; }
+
 input:focus,
 .button:hover {
+  border-color: #999;
   outline: none;
-  box-shadow: none;
   background: #fafafa;
-  border-color: #999999; }
+  box-shadow: none; }
 
 .container {
   max-width: 900px;
@@ -89,62 +100,67 @@ input:focus,
   margin-bottom: 1rem; }
 
 .card {
-  width: 350px;
-  height: 200px;
-  background: #ddd;
-  margin-left: -175px;
-  margin-top: -100px;
+  position: fixed;
   top: 50%;
   left: 50%;
-  position: fixed;
   overflow: hidden;
+  width: 350px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -175px;
   border-radius: 0.3125rem;
-  box-shadow: 0 2.8125rem 6.25rem rgba(0, 0, 0, 0.4);
-  background-image: url("../images/bg.jpg");
-  background-size: cover; }
+  background: #ddd;
+  box-shadow: 0 2.8125rem 6.25rem rgba(0, 0, 0, 0.4); }
   .card .light {
     position: absolute;
+    z-index: 100;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 100;
     background: -webkit-linear-gradient(315deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%); }
-  .card div[class^="layer-"] {
+  .card div[class^='layer-'] {
     position: absolute;
-    background-size: 100% auto;
+    -webkit-transition: .1s;
+    transition: .1s;
     background-repeat: no-repeat;
     background-position: 0 0;
-    -webkit-transition: 0.1s;
-    transition: 0.1s; }
+    background-size: 100% auto; }
   .card .card__logo {
-    right: 10%;
-    top: 30px; }
+    top: 30px;
+    right: 10%; }
     .card .card__logo img {
-      max-height: 30px;
-      display: block; }
+      display: block;
+      max-height: 30px; }
   .card .card__number,
   .card .card__holder {
-    font-size: 21px;
-    color: white;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
     font-family: Consolas, Courier, monospace;
+    font-size: 21px;
     position: absolute;
     z-index: 1;
-    text-overflow: ellipsis;
+    overflow: hidden;
     white-space: nowrap;
-    overflow: hidden; }
+    text-overflow: ellipsis;
+    color: white;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.8); }
   .card .card__number {
-    text-transform: uppercase;
     bottom: 90px;
-    width: 80%;
-    left: 10%; }
-  .card .card__holder {
-    width: 80%;
     left: 10%;
-    bottom: 30px;
+    width: 80%;
     text-transform: uppercase; }
+  .card .card__holder {
+    bottom: 30px;
+    left: 10%;
+    width: 80%;
+    text-transform: uppercase; }
+
+#img-out canvas {
+  max-width: 100%; }
+
+.layer-1 {
+  left: 0px;
+  top: 0px; }
 
 .clearfix:after,
 .row:after {

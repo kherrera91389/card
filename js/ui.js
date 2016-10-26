@@ -3,13 +3,14 @@ $(function() {
     html2canvas($("#card"), {
       onrendered: function(canvas) {
         theCanvas = canvas;
-        document.body.appendChild(canvas);
+        // document.body.getElementById('img-out')[0].appendChild(canvas);
+        // document.body.appendChild(canvas);
 
         // Convert and download as image 
-        Canvas2Image.saveAsPNG(canvas);
+        // theCanvas.saveAsPNG(canvas);
         $("#img-out").append(canvas);
         // Clean up 
-        document.body.removeChild(canvas);
+        // document.body.removeChild(canvas);
       }
     });
   });
@@ -40,7 +41,7 @@ $(function() {
                 // Not supported
             }
         };
-                $scope.cardLogo = function (e) {
+        $scope.cardLogo = function (e) {
             var tgt = e.target || window.event.srcElement,
                 files = tgt.files,
                 fileReader;
